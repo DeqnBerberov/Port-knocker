@@ -1,0 +1,16 @@
+==================================================GW-NR01======================================================
+/ip firewall filter add action=add-src-to-address-list address-list=FirstKnock_RouterAccess address-list-timeout=10s chain=input dst-port=14172 protocol=tcp comment="ports for portknocking"
+/ip firewall filter add action=add-src-to-address-list address-list=SecondKnock_RouterAccess address-list-timeout=10s chain=input dst-port=14001 protocol=tcp src-address-list=FirstKnock_RouterAccess
+/ip firewall filter add action=add-src-to-address-list address-list=ROUTERACCESS address-list-timeout=1m chain=input dst-port=6017 protocol=tcp src-address-list="SecondKnock_RouterAccess"
+==================================================GW-NR02======================================================
+/ip firewall filter add action=add-src-to-address-list address-list=FirstKnock_RouterAccess address-list-timeout=10s chain=input dst-port=62309 protocol=tcp comment="ports for portknocking"
+/ip firewall filter add action=add-src-to-address-list address-list=SecondKnock_RouterAccess address-list-timeout=10s chain=input dst-port=43257 protocol=tcp src-address-list=FirstKnock_RouterAccess
+/ip firewall filter add action=add-src-to-address-list address-list=ROUTERACCESS address-list-timeout=1m chain=input dst-port=6120 protocol=tcp src-address-list="SecondKnock_RouterAccess"
+==================================================GW-SF03======================================================
+/ip firewall filter add action=add-src-to-address-list address-list=FirstKnock_RouterAccess address-list-timeout=10s chain=input dst-port=48790 protocol=tcp comment="ports for portknocking"
+/ip firewall filter add action=add-src-to-address-list address-list=SecondKnock_RouterAccess address-list-timeout=10s chain=input dst-port=23587 protocol=tcp src-address-list=FirstKnock_RouterAccess
+/ip firewall filter add action=add-src-to-address-list address-list=ROUTERACCESS address-list-timeout=1m chain=input dst-port=19485 protocol=tcp src-address-list="SecondKnock_RouterAccess"
+==================================================GW-SK01======================================================
+/ip firewall filter add action=add-src-to-address-list address-list=FirstKnock_RouterAccess address-list-timeout=10s chain=input dst-port=60011 protocol=tcp comment="ports for portknocking"
+/ip firewall filter add action=add-src-to-address-list address-list=SecondKnock_RouterAccess address-list-timeout=10s chain=input dst-port=43118 protocol=tcp src-address-list=FirstKnock_RouterAccess
+/ip firewall filter add action=add-src-to-address-list address-list=ROUTERACCESS address-list-timeout=1m chain=input dst-port=28866 protocol=tcp src-address-list="SecondKnock_RouterAccess"

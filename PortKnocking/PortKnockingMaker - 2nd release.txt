@@ -1,0 +1,85 @@
+==================================================Default======================================================
+/ip firewall filter
+add action=accept chain=input connection-state=established,related
+add action=add-src-to-address-list address-list=FirstKnock_RouterAccess \
+    address-list-timeout=10s chain=input dst-port=62521 protocol=tcp \
+    src-port=""
+add action=add-src-to-address-list address-list=SecondKnock_RouterAccess \
+    address-list-timeout=10s chain=input dst-port=29819 protocol=tcp \
+    src-address-list=FirstKnock_RouterAccess
+add action=add-src-to-address-list address-list=ROUTERACCESS address-list-timeout=1m \
+    chain=input dst-port=9851 protocol=tcp src-address-list=\
+    SecondKnock_RouterAccess
+add action=drop chain=input dst-port=22,88,443,8291 protocol=tcp \
+    src-address-list=!ROUTERACCESS
+/ip firewall address-list
+add address=192.168.3.0 list=ROUTERACCESS
+add address=78.90.5.201 list=ROUTERACCESS
+==================================================GW-NR01======================================================
+/ip firewall filter
+add action=accept chain=input connection-state=established,related
+add action=add-src-to-address-list address-list=FirstKnock_RouterAccess \
+    address-list-timeout=10s chain=input dst-port=39922 protocol=tcp \
+    src-port=""
+add action=add-src-to-address-list address-list=SecondKnock_RouterAccess \
+    address-list-timeout=10s chain=input dst-port=25703 protocol=tcp \
+    src-address-list=FirstKnock_RouterAccess
+add action=add-src-to-address-list address-list=ROUTERACCESS address-list-timeout=1m \
+    chain=input dst-port=8651 protocol=tcp src-address-list=\
+    SecondKnock_RouterAccess
+add action=drop chain=input dst-port=22,88,443,8291 protocol=tcp \
+    src-address-list=!ROUTERACCESS
+/ip firewall address-list
+add address=192.168.3.0 list=ROUTERACCESS
+add address=78.90.5.201 list=ROUTERACCESS
+==================================================GW-NR02======================================================
+/ip firewall filter
+add action=accept chain=input connection-state=established,related
+add action=add-src-to-address-list address-list=FirstKnock_RouterAccess \
+    address-list-timeout=10s chain=input dst-port=46131 protocol=tcp \
+    src-port=""
+add action=add-src-to-address-list address-list=SecondKnock_RouterAccess\
+    address-list-timeout=10s chain=input dst-port=16415 protocol=tcp \
+    src-address-list=FirstKnock_RouterAccess
+add action=add-src-to-address-list address-list=ROUTERACCESS address-list-timeout=1m \
+    chain=input dst-port=9688 protocol=tcp src-address-list=\
+    SecondKnock_RouterAccess
+add action=drop chain=input dst-port=22,88,443,8291 protocol=tcp \
+    src-address-list=!ROUTERACCESS
+/ip firewall address-list
+add address=192.168.3.0 list=ROUTERACCESS
+add address=78.90.5.201 list=ROUTERACCESS
+==================================================GW-SF03======================================================
+/ip firewall filter
+add action=accept chain=input connection-state=established,related
+add action=add-src-to-address-list address-list=FirstKnock_RouterAccess \
+    address-list-timeout=10s chain=input dst-port=31924 protocol=tcp \
+    src-port=""
+add action=add-src-to-address-list address-list=SecondKnock_RouterAccess\
+    address-list-timeout=10s chain=input dst-port=19334 protocol=tcp \
+    src-address-list=FirstKnock_RouterAccess
+add action=add-src-to-address-list address-list=ROUTERACCESS address-list-timeout=1m \
+    chain=input dst-port=6282 protocol=tcp src-address-list=\
+    SecondKnock_RouterAccess
+add action=drop chain=input dst-port=22,88,443,8291 protocol=tcp \
+    src-address-list=!ROUTERACCESS
+/ip firewall address-list
+add address=192.168.3.0 list=ROUTERACCESS
+add address=78.90.5.201 list=ROUTERACCESS
+==================================================GW-SK01======================================================
+/ip firewall filter
+add action=accept chain=input connection-state=established,related
+add action=add-src-to-address-list address-list=FirstKnock_RouterAccess \
+    address-list-timeout=10s chain=input dst-port=47028 protocol=tcp \
+    src-port=""
+add action=add-src-to-address-list address-list=SecondKnock_RouterAccess\
+    address-list-timeout=10s chain=input dst-port=29821 protocol=tcp \
+    src-address-list=FirstKnock_RouterAccess
+add action=add-src-to-address-list address-list=ROUTERACCESS address-list-timeout=1m \
+    chain=input dst-port=9972 protocol=tcp src-address-list=\
+    SecondKnock_RouterAccess
+add action=drop chain=input dst-port=22,88,443,8291 protocol=tcp \
+    src-address-list=!ROUTERACCESS
+/ip firewall address-list
+add address=192.168.3.0 list=ROUTERACCESS
+add address=78.90.5.201 list=ROUTERACCESS
