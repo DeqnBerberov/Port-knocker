@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documenti\\AAAAWORK\\PortKnocking\\PortKnocking.csproj",
+      "projectUniqueName": "D:\\Documenti\\GitHub\\Port-knocker\\PortKnocking\\PortKnocking.csproj",
       "projectName": "PortKnocking",
-      "projectPath": "D:\\Documenti\\AAAAWORK\\PortKnocking\\PortKnocking.csproj",
+      "projectPath": "D:\\Documenti\\GitHub\\Port-knocker\\PortKnocking\\PortKnocking.csproj",
       "packagesPath": "C:\\Users\\Deyan\\.nuget\\packages\\",
-      "outputPath": "D:\\Documenti\\AAAAWORK\\PortKnocking\\obj\\",
+      "outputPath": "D:\\Documenti\\GitHub\\Port-knocker\\PortKnocking\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Deyan\\AppData\\Roaming\\NuGet\\NuGet.Config",

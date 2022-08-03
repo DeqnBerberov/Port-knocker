@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace PortKnocking
 {
-    class Create
+    public class Create
     {
+        public string tempPath = Directory.GetCurrentDirectory();
+        public string tempdir;
+
         public void CreateAll()
         {
             Create create = new Create();
@@ -19,12 +23,15 @@ namespace PortKnocking
         }
         public void CreateDefault()
         {
+            tempdir = Path.GetFullPath(Path.Combine(tempPath, @"..\..\..\"));
+            string[] paths = { tempdir, "Portknocker-Create.txt" };
+            string fullpath = Path.Combine(paths);
             Random rnd = new Random();
             int port1 = 62521;
             int port2 = 29819;
             int port3 = 9851;
             using (System.IO.StreamWriter file =
-            new System.IO.StreamWriter(@"D:\Documenti\AAAAWORK\PortKnocking\Portknocker-Create.txt", true))
+            new System.IO.StreamWriter(fullpath, true))
             {
                 file.WriteLine("==================================================Default======================================================");
                 file.WriteLine("/ip firewall filter add action=accept chain=input connection-state=established,related");
@@ -39,12 +46,15 @@ namespace PortKnocking
 
         public void CreateGWNR01()
         {
+            tempdir = Path.GetFullPath(Path.Combine(tempPath, @"..\..\..\"));
+            string[] paths = { tempdir, "Portknocker-Create.txt" };
+            string fullpath = Path.Combine(paths);
             Random rnd = new Random();
             int port1 = rnd.Next(1024, 65535);
             int port2 = rnd.Next(1024, port1);
             int port3 = rnd.Next(1024, port2);
             using (System.IO.StreamWriter file =
-            new System.IO.StreamWriter(@"D:\Documenti\AAAAWORK\PortKnocking\Portknocker-Create.txt", true))
+            new System.IO.StreamWriter(fullpath, true))
             {
                 file.WriteLine("==================================================GW-NR01======================================================");
                 file.WriteLine("/ip firewall filter add action=accept chain=input connection-state=established,related");
@@ -59,12 +69,15 @@ namespace PortKnocking
 
         public void CreateGWNR02()
         {
+            tempdir = Path.GetFullPath(Path.Combine(tempPath, @"..\..\..\"));
+            string[] paths = { tempdir, "Portknocker-Create.txt" };
+            string fullpath = Path.Combine(paths);
             Random rnd = new Random();
             int port1 = rnd.Next(1024, 65535);
             int port2 = rnd.Next(1024, port1);
             int port3 = rnd.Next(1024, port2);
             using (System.IO.StreamWriter file =
-            new System.IO.StreamWriter(@"D:\Documenti\AAAAWORK\PortKnocking\Portknocker-Create.txt", true))
+            new System.IO.StreamWriter(fullpath, true))
             {
                 file.WriteLine("==================================================GW-NR02======================================================");
                 file.WriteLine("/ip firewall filter add action=accept chain=input connection-state=established,related");
@@ -79,12 +92,15 @@ namespace PortKnocking
 
         public void CreateGWSF03()
         {
+            tempdir = Path.GetFullPath(Path.Combine(tempPath, @"..\..\..\"));
+            string[] paths = { tempdir, "Portknocker-Create.txt" };
+            string fullpath = Path.Combine(paths);
             Random rnd = new Random();
             int port1 = rnd.Next(1024, 65535);
             int port2 = rnd.Next(1024, port1);
             int port3 = rnd.Next(1024, port2);
             using (System.IO.StreamWriter file =
-            new System.IO.StreamWriter(@"D:\Documenti\AAAAWORK\PortKnocking\Portknocker-Create.txt", true))
+            new System.IO.StreamWriter(fullpath, true))
             {
                 file.WriteLine("==================================================GW-SF03======================================================");
                 file.WriteLine("/ip firewall filter add action=accept chain=input connection-state=established,related");
@@ -99,12 +115,15 @@ namespace PortKnocking
 
         public void CreateGWSF04()
         {
+            tempdir = Path.GetFullPath(Path.Combine(tempPath, @"..\..\..\"));
+            string[] paths = { tempdir, "Portknocker-Create.txt" };
+            string fullpath = Path.Combine(paths);
             Random rnd = new Random();
             int port1 = rnd.Next(1024, 65535);
             int port2 = rnd.Next(1024, port1);
             int port3 = rnd.Next(1024, port2);
             using (System.IO.StreamWriter file =
-            new System.IO.StreamWriter(@"D:\Documenti\AAAAWORK\PortKnocking\Portknocker-Create.txt", true))
+            new System.IO.StreamWriter(fullpath, true))
             {
                 file.WriteLine("==================================================GW-SF04======================================================");
                 file.WriteLine("/ip firewall filter add action=accept chain=input connection-state=established,related");
@@ -119,12 +138,15 @@ namespace PortKnocking
 
         public void CreateGWSK01()
         {
+            tempdir = Path.GetFullPath(Path.Combine(tempPath, @"..\..\..\"));
+            string[] paths = { tempdir, "Portknocker-Create.txt" };
+            string fullpath = Path.Combine(paths);
             Random rnd = new Random();
             int port1 = rnd.Next(1024, 65535);
             int port2 = rnd.Next(1024, port1);
             int port3 = rnd.Next(1024, port2);
             using (System.IO.StreamWriter file =
-            new System.IO.StreamWriter(@"D:\Documenti\AAAAWORK\PortKnocking\Portknocker-Create.txt", true))
+            new System.IO.StreamWriter(fullpath, true))
             {
                 file.WriteLine("==================================================GW-SK01======================================================");
                 file.WriteLine("/ip firewall filter add action=accept chain=input connection-state=established,related");
@@ -139,12 +161,15 @@ namespace PortKnocking
 
         public void CreateGWSK02()
         {
+            tempdir = Path.GetFullPath(Path.Combine(tempPath, @"..\..\..\"));
+            string[] paths = { tempdir, "Portknocker-Create.txt" };
+            string fullpath = Path.Combine(paths);
             Random rnd = new Random();
             int port1 = rnd.Next(1024, 65535);
             int port2 = rnd.Next(1024, port1);
             int port3 = rnd.Next(1024, port2);
             using (System.IO.StreamWriter file =
-            new System.IO.StreamWriter(@"D:\Documenti\AAAAWORK\PortKnocking\Portknocker-Create.txt", true))
+            new System.IO.StreamWriter(fullpath, true))
             {
                 file.WriteLine("==================================================GW-SK02======================================================");
                 file.WriteLine("/ip firewall filter add action=accept chain=input connection-state=established,related");
