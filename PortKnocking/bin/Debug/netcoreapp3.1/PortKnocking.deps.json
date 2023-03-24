@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "PortKnocking/1.0.0": {
+        "runtime": {
+          "PortKnocking.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PortKnocking/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

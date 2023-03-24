@@ -1,0 +1,25 @@
+==================================================GW-NR01======================================================
+/ip firewall address-list add address=192.168.3.135 list=ROUTERACCESS comment="Temp for updating port-knocking. If it is still here - delete it"
+/ip firewall filter add action=add-src-to-address-list address-list=FirstKnock_RouterAccess address-list-timeout=10s chain=input dst-port=57569 protocol=tcp comment="Ports for portknocking"
+/ip firewall filter add action=add-src-to-address-list address-list=SecondKnock_RouterAccess address-list-timeout=10s chain=input dst-port=54646 protocol=tcp src-address-list=FirstKnock_RouterAccess
+/ip firewall filter add action=add-src-to-address-list address-list=ROUTERACCESS address-list-timeout=1m chain=input dst-port=13394 protocol=tcp src-address-list="SecondKnock_RouterAccess"
+==================================================GW-NR02======================================================
+/ip firewall address-list add address=192.168.3.135 list=ROUTERACCESS comment="Temp for updating port-knocking. If it is still here - delete it"
+/ip firewall filter add action=add-src-to-address-list address-list=FirstKnock_RouterAccess address-list-timeout=10s chain=input dst-port=58494 protocol=tcp comment="Ports for portknocking"
+/ip firewall filter add action=add-src-to-address-list address-list=SecondKnock_RouterAccess address-list-timeout=10s chain=input dst-port=13857 protocol=tcp src-address-list=FirstKnock_RouterAccess
+/ip firewall filter add action=add-src-to-address-list address-list=ROUTERACCESS address-list-timeout=1m chain=input dst-port=4951 protocol=tcp src-address-list="SecondKnock_RouterAccess"
+==================================================GW-SF03======================================================
+/ip firewall address-list add address=192.168.3.135 list=ROUTERACCESS comment="Temp for updating port-knocking. If it is still here - delete it"
+/ip firewall filter add action=add-src-to-address-list address-list=FirstKnock_RouterAccess address-list-timeout=10s chain=input dst-port=45099 protocol=tcp comment="Ports for portknocking"
+/ip firewall filter add action=add-src-to-address-list address-list=SecondKnock_RouterAccess address-list-timeout=10s chain=input dst-port=1175 protocol=tcp src-address-list=FirstKnock_RouterAccess
+/ip firewall filter add action=add-src-to-address-list address-list=ROUTERACCESS address-list-timeout=1m chain=input dst-port=1037 protocol=tcp src-address-list="SecondKnock_RouterAccess"
+==================================================GW-SK01======================================================
+/ip firewall address-list add address=192.168.3.135 list=ROUTERACCESS comment="Temp for updating port-knocking. If it is still here - delete it"
+/ip firewall filter add action=add-src-to-address-list address-list=FirstKnock_RouterAccess address-list-timeout=10s chain=input dst-port=32454 protocol=tcp comment="Ports for portknocking"
+/ip firewall filter add action=add-src-to-address-list address-list=SecondKnock_RouterAccess address-list-timeout=10s chain=input dst-port=30761 protocol=tcp src-address-list=FirstKnock_RouterAccess
+/ip firewall filter add action=add-src-to-address-list address-list=ROUTERACCESS address-list-timeout=1m chain=input dst-port=6903 protocol=tcp src-address-list="SecondKnock_RouterAccess"
+==================================================GW-SK02======================================================
+/ip firewall address-list add address=192.168.3.135 list=ROUTERACCESS comment="Temp for updating port-knocking. If it is still here - delete it"
+/ip firewall filter add action=add-src-to-address-list address-list=FirstKnock_RouterAccess address-list-timeout=10s chain=input dst-port=44334 protocol=tcp comment="ports for portknocking"
+/ip firewall filter add action=add-src-to-address-list address-list=SecondKnock_RouterAccess address-list-timeout=10s chain=input dst-port=21873 protocol=tcp src-address-list=FirstKnock_RouterAccess
+/ip firewall filter add action=add-src-to-address-list address-list=ROUTERACCESS address-list-timeout=1m chain=input dst-port=19421 protocol=tcp src-address-list="SecondKnock_RouterAccess"
